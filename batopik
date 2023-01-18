@@ -1,0 +1,33 @@
+program RockPaperScissors;
+uses crt;
+var
+  computerChoice, userChoice: Integer;
+
+begin
+  Randomize;
+
+  writeln('Rock, Paper, Scissors');
+  writeln('1. Rock');
+  writeln('2. Paper');
+  writeln('3. Scissors');
+  write('Enter your choice: ');
+  readln(userChoice);
+
+  computerChoice := Random(3) + 1;
+
+  writeln('Computer chose: ', computerChoice);
+  writeln('You chose: ', userChoice);
+
+  case computerChoice of
+    1: if userChoice = 1 then writeln('Tie!')
+       else if userChoice = 2 then writeln('You win!')
+       else writeln('Computer wins!');
+    2: if userChoice = 1 then writeln('Computer wins!')
+       else if userChoice = 2 then writeln('Tie!')
+       else writeln('You win!');
+    3: if userChoice = 1 then writeln('You win!')
+       else if userChoice = 2 then writeln('Computer wins!')
+       else writeln('Tie!');
+  end;
+
+end.
